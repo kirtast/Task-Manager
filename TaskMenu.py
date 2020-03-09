@@ -17,13 +17,13 @@ def main():
     root=Tk()
     root.title('TASK MENU')
 
-    root.resizable(0,0)
+    root.resizable(1,1)
     #root.iconbitmap('seat_logo.ico')
 
     frameMain=Frame(root)
     frameMain.grid(row=0,column=0,sticky=W+E)
-    labelBotonMainTask=Label(frameMain,text='New Task:')
-    labelBotonMainTask.grid(row=0,column=0,padx=5,pady=5,sticky='w')
+    labelbotonNewTask=Label(frameMain,text='New Task:')
+    labelbotonNewTask.grid(row=0,column=0,padx=5,pady=5,sticky='w')
     def openNewTask():
         NewTask()
     botonNewTask=Button(frameMain,text='NEW TASK',command=openNewTask)
@@ -31,9 +31,12 @@ def main():
     botonNewTask.grid(row=1,column=0,padx=5,pady=5,sticky='w')
     def openNewSubTask():
         NewSubTask()
+    labelBotonNewSubTask=Label(frameMain,text='New Sub Task:')
+    labelBotonNewSubTask.grid(row=2,column=0,padx=5,pady=5,sticky='w')
     botonNewSubTask=Button(frameMain,text='NEW SUB TASK',command=openNewSubTask)
     # botonNewTask=Button(frameMain,text='NEW TASK')
-    botonNewSubTask.grid(row=2,column=0,padx=5,pady=5,sticky='w')
+    botonNewSubTask.grid(row=3,column=0,padx=5,pady=5,sticky='w')
+
     root.mainloop()
 
 
