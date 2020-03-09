@@ -11,7 +11,7 @@ import pandas as pd
 from tkcalendar import Calendar, DateEntry
 
 from NewTask import*
-
+from NewSubTask import*
 
 def main():
     root=Tk()
@@ -26,13 +26,14 @@ def main():
     labelBotonMainTask.grid(row=0,column=0,padx=5,pady=5,sticky='w')
     def openNewTask():
         NewTask()
-    botonNewTask=Button(frameMain,text='NEW TASK',command=openNewTask())
+    botonNewTask=Button(frameMain,text='NEW TASK',command=openNewTask)
     # botonNewTask=Button(frameMain,text='NEW TASK')
     botonNewTask.grid(row=1,column=0,padx=5,pady=5,sticky='w')
-
-
-
-
+    def openNewSubTask():
+        NewSubTask()
+    botonNewSubTask=Button(frameMain,text='NEW SUB TASK',command=openNewSubTask)
+    # botonNewTask=Button(frameMain,text='NEW TASK')
+    botonNewSubTask.grid(row=2,column=0,padx=5,pady=5,sticky='w')
     root.mainloop()
 
 
