@@ -31,10 +31,11 @@ def NewTask():
 
     def submit():
         current_time_class = datetime.datetime.now()
-
         current_time=str(current_time_class.day)+ '/'+ str(current_time_class.month)+ '/' + str(current_time_class.year)
+
         tasksubject=textSubject.get('1.0','end')
         taskdescription=textDescription.get('1.0','end')
+
         state_obj=cur.execute('SELECT id FROM State WHERE Description = ?',('NO ACTIVO',))
         for a in state_obj:
             state=a[0]
@@ -44,7 +45,7 @@ def NewTask():
     botonSubmit=Button(frameTask,text='SUBMIT',command=submit)
     botonSubmit.grid(row=4,column=0,padx=5,pady=5,sticky='w')
 
-
+    
     root.mainloop()
 if __name__ == '__NewTask__':
     NewTask()

@@ -12,6 +12,7 @@ from tkcalendar import Calendar, DateEntry
 
 from NewTask import*
 from NewSubTask import*
+from ManageTasks import*
 
 def main():
     root=Tk()
@@ -36,6 +37,12 @@ def main():
     botonNewSubTask=Button(frameMain,text='NEW SUB TASK',command=openNewSubTask)
     # botonNewTask=Button(frameMain,text='NEW TASK')
     botonNewSubTask.grid(row=3,column=0,padx=5,pady=5,sticky='w')
+    def openManTask():
+        ManageTasks()
+    labelManagement=Label(frameMain,text='Manage Task:')
+    labelManagement.grid(row=0,column=1,padx=5,pady=5,sticky='w')
+    botonNewSubTask=Button(frameMain,text='MANAGE TASK',command=openManTask)
+    botonNewSubTask.grid(row=1,column=1,padx=5,pady=5,sticky='w')
 
     root.mainloop()
 
